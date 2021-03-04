@@ -35,7 +35,10 @@ Note: it is not possible to access elasticache directly through the public inter
 
 ### Credential Rotation
 
-It is possible to rotate credentials using AWS Secrets Managers. While this is not supported out of the box, I was able to do a basic proof of concept rotating the credentials with Lambda.
+It is possible to rotate credentials using AWS Secrets Managers. While this is not supported out of the box, I was able to do a basic proof of concept rotating the credentials with Lambda. The basic concept is incredibly simple. Once a new credential is applied, the previous credential is still valid. Up to two credentials can be valid at once. The oldest credential is removed on rotation.
+
+
+The following is a working Lambda code snippet that can modify Lambda ElastiCache cluster secrets.
 
 ```JavaScript
 const aws = require('aws-sdk')
