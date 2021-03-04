@@ -45,7 +45,6 @@ const aws = require('aws-sdk')
 
 const redis = new aws.ElastiCache()
 
-
 exports.handler = async (event) => {
     try {
         return redis.modifyReplicationGroup({
