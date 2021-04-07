@@ -2,6 +2,9 @@
 
 This is a tiny app I created to play around with Redis. To run, just `docker-compose up`
 
+## Use Cases
+Caching, queuing, locking, throttling, pub/sub
+
 ## Redis Security
 
 https://redis.io/topics/security
